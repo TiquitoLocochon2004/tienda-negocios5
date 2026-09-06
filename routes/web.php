@@ -19,6 +19,7 @@ use App\Http\Controllers\CarritoItemController;
 // Route::post('/carrito/agregar', [CarritoItemController::class, 'store'])->name('carrito.agregar')->middleware('auth');
 
 Route::view('/', 'welcome');
+Route::redirect('/api', '/');
 
 // --- PRODUCTOS (Orden estricto: estáticas primero, dinámicas después) ---
 Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
