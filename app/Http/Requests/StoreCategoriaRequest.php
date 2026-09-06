@@ -29,7 +29,7 @@ class StoreCategoriaRequest extends FormRequest
         $categoriaId = $this->route('categoria') ? $this->route('categoria')->id : null;
 
         return [
-            'nombre' => 'required|string|max:50|unique:categorias,nombre,' . $categoriaId,
+            'nombre' => 'required|string|max:50|unique:categorias,nombre,|regex:/^[\pL\s]+$/u' . $categoriaId,
         ];
     }
 
@@ -38,7 +38,9 @@ class StoreCategoriaRequest extends FormRequest
         return [
             'nombre.required' => 'El nombre de la categoría es obligatorio.',
             'nombre.unique' => 'Ya existe una categoría con ese nombre.',
-            'nombre.max' => 'El nombre no puede superar los 50 caracteres.'
+            'nombre.max' => 'El nombre no puede superar los 50 caracteres.',
+            'nombre.string' => 'El nombre debe ser un texto válido.',
+            'nombre.regex' => 'El nombre de la categoría solo debe contener letras y espacios.',
         ];
     }
 }
