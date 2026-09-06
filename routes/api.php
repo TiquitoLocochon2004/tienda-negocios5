@@ -19,15 +19,24 @@ use App\Http\Controllers\Api\AuthController;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-// Endpoints Públicos de Catálogo con prefijos y nombres exclusivos para API
 Route::apiResource('categorias', CategoriaController::class, [
-    'parameters' => ['categorias' => 'categoria'],
-    'names' => 'api.categorias'
+    'names' => [
+        'index'   => 'api.categorias.index',
+        'store'   => 'api.categorias.store',
+        'show'    => 'api.categorias.show',
+        'update'  => 'api.categorias.update',
+        'destroy' => 'api.categorias.destroy',
+    ]
 ]);
 
 Route::apiResource('productos', ProductoController::class, [
-    'parameters' => ['productos' => 'producto'],
-    'names' => 'api.productos'
+    'names' => [
+        'index'   => 'api.productos.index',
+        'store'   => 'api.productos.store',
+        'show'    => 'api.productos.show',
+        'update'  => 'api.productos.update',
+        'destroy' => 'api.productos.destroy',
+    ]
 ]);
 
 // --- RUTAS PROTEGIDAS (Requieren Token JWT) ---
