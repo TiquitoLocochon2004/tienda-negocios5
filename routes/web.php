@@ -20,11 +20,21 @@ use App\Http\Controllers\CarritoItemController;
 
 Route::view('/', 'welcome');
 
-// Rutas completas para Productos
-Route::resource('productos', ProductoController::class);
+// Rutas Web de Productos
+Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
+Route::get('/productos/create', [ProductoController::class, 'create'])->name('productos.create');
+Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
+Route::get('/productos/{producto}/edit', [ProductoController::class, 'edit'])->name('productos.edit');
+Route::put('/productos/{producto}', [ProductoController::class, 'update'])->name('productos.update');
+Route::delete('/productos/{producto}', [ProductoController::class, 'destroy'])->name('productos.destroy');
 
-// Rutas completas para Categorías
-Route::resource('categorias', CategoriaController::class);
+// Rutas Web de Categorías
+Route::get('/categorias', [CategoriaController::class, 'index'])->name('categorias.index');
+Route::get('/categorias/create', [CategoriaController::class, 'create'])->name('categorias.create');
+Route::post('/categorias', [CategoriaController::class, 'store'])->name('categorias.store');
+Route::get('/categorias/{categoria}/edit', [CategoriaController::class, 'edit'])->name('categorias.edit');
+Route::put('/categorias/{categoria}', [CategoriaController::class, 'update'])->name('categorias.update');
+Route::delete('/categorias/{categoria}', [CategoriaController::class, 'destroy'])->name('categorias.destroy');
 
-// Ruta del carrito
+// Carrito
 Route::post('/carrito/agregar', [CarritoItemController::class, 'store'])->name('carrito.agregar')->middleware('auth');
