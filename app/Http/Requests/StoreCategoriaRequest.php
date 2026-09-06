@@ -27,11 +27,24 @@ class StoreCategoriaRequest extends FormRequest
 
     public function rules(): array
     {
-        $categoriaId = $this->route('categoria') ? $this->route('categoria')->id : null;
+        // $categoriaId = $this->route('categoria') ? $this->route('categoria')->id : null;
 
+        // return [
+        //     'nombre' => 'required|string|max:50|unique:categorias,nombre,|regex:/^[\pL\s]+$/u|' . $categoriaId,
+        //     Rule::unique('categorias', 'nombre')->ignore($categoriaId),
+        // ];
+
+        $categoriaId = $this->route('categoria');
+        $id = is_object($categoriaId) ? $categoriaId->id : $categoriaId;
+        
         return [
-            'nombre' => 'required|string|max:50|unique:categorias,nombre,|regex:/^[\pL\s]+$/u|' . $categoriaId,
-            Rule::unique('categorias', 'nombre')->ignore($categoriaId),
+            'nombre' => [
+                'required',
+                'string',
+                'max:50',
+                'regex:/^[\pL\s]+$/u',
+                Rule::unique('categorias', 'nombre')->ignore($id),
+            ],
         ];
     }
 
