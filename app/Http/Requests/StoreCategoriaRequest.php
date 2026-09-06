@@ -26,7 +26,9 @@ class StoreCategoriaRequest extends FormRequest
 
     public function rules(): array
     {
-        $categoriaId = $this->route('categoria') ? $this->route('categoria')->id : null;
+        // $categoriaId = $this->route('categoria') ? $this->route('categoria')->id : null;
+        $categoria = $this->route('categoria');
+        $categoriaId = is_object($categoria) ? $categoria->id : $categoria;
 
         return [
             'nombre' => 'required|string|max:50|unique:categorias,nombre,|regex:/^[\pL\s]+$/u' . $categoriaId,
