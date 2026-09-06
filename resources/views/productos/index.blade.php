@@ -19,10 +19,10 @@
                 <p class="text-muted m-0">Administra el inventario de tu tienda de forma rápida y segura.</p>
             </div>
             <div>
-                <a href="{{ route('categorias.index') }}" class="btn btn-outline-secondary shadow-sm me-2">
+                <a href="{{ route('web.categorias.index') }}" class="btn btn-outline-secondary shadow-sm me-2">
                     <i class="bi bi-tags me-1"></i> Ir a Categorías
                 </a>
-                <a href="{{ route('productos.create') }}" class="btn btn-primary shadow-sm">
+                <a href="{{ route('web.productos.create') }}" class="btn btn-primary shadow-sm">
                     <i class="bi bi-plus-lg me-1"></i> Nuevo Producto
                 </a>
             </div>
@@ -70,12 +70,12 @@
                                     </td>
                                     <td class="text-end pe-4">
                                         <!-- Botón Editar -->
-                                        <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-outline-warning btn-sm me-1" title="Editar">
+                                        <a href="{{ route('web.productos.edit', $producto->id) }}" class="btn btn-outline-warning btn-sm me-1" title="Editar">
                                             <i class="bi bi-pencil-square"></i> Editar
                                         </a>
 
                                         <!-- Botón Eliminar -->
-                                        <form action="{{ route('productos.destroy', $producto->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de eliminar este producto?');">
+                                        <form action="{{ route('web.productos.destroy', $producto->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de eliminar este producto?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-outline-danger btn-sm" title="Eliminar">

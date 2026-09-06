@@ -22,20 +22,20 @@ Route::view('/', 'welcome');
 Route::redirect('/api', '/');
 
 // --- PRODUCTOS (Orden estricto: estáticas primero, dinámicas después) ---
-Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
-Route::get('/productos/crear', [ProductoController::class, 'create'])->name('productos.create');
-Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
-Route::get('/productos/{producto}/editar', [ProductoController::class, 'edit'])->name('productos.edit');
-Route::put('/productos/{producto}', [ProductoController::class, 'update'])->name('productos.update');
-Route::delete('/productos/{producto}', [ProductoController::class, 'destroy'])->name('productos.destroy');
+Route::get('/productos', [ProductoController::class, 'index'])->name('web.productos.index');
+Route::get('/productos/crear', [ProductoController::class, 'create'])->name('web.productos.create');
+Route::post('/productos', [ProductoController::class, 'store'])->name('web.productos.store');
+Route::get('/productos/{producto}/editar', [ProductoController::class, 'edit'])->name('web.productos.edit');
+Route::put('/productos/{producto}', [ProductoController::class, 'update'])->name('web.productos.update');
+Route::delete('/productos/{producto}', [ProductoController::class, 'destroy'])->name('web.productos.destroy');
 
 // --- CATEGORÍAS (Orden estricto: estáticas primero, dinámicas después) ---
-Route::get('/categorias', [CategoriaController::class, 'index'])->name('categorias.index');
-Route::get('/categorias/crear', [CategoriaController::class, 'create'])->name('categorias.create');
-Route::post('/categorias', [CategoriaController::class, 'store'])->name('categorias.store');
-Route::get('/categorias/{categoria}/editar', [CategoriaController::class, 'edit'])->name('categorias.edit');
-Route::put('/categorias/{categoria}', [CategoriaController::class, 'update'])->name('categorias.update');
-Route::delete('/categorias/{categoria}', [CategoriaController::class, 'destroy'])->name('categorias.destroy');
+Route::get('/categorias', [CategoriaController::class, 'index'])->name('web.categorias.index');
+Route::get('/categorias/crear', [CategoriaController::class, 'create'])->name('web.categorias.create');
+Route::post('/categorias', [CategoriaController::class, 'store'])->name('web.categorias.store');
+Route::get('/categorias/{categoria}/editar', [CategoriaController::class, 'edit'])->name('web.categorias.edit');
+Route::put('/categorias/{categoria}', [CategoriaController::class, 'update'])->name('web.categorias.update');
+Route::delete('/categorias/{categoria}', [CategoriaController::class, 'destroy'])->name('web.categorias.destroy');
 
 // Carrito
 Route::post('/carrito/agregar', [CarritoItemController::class, 'store'])->name('carrito.agregar')->middleware('auth');

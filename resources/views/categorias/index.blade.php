@@ -19,10 +19,10 @@
                 <p class="text-muted m-0">Administra las categorías de tus productos de forma rápida y segura.</p>
             </div>
             <div>
-                <a href="{{ route('productos.index') }}" class="btn btn-outline-secondary shadow-sm me-2">
+                <a href="{{ route('web.productos.index') }}" class="btn btn-outline-secondary shadow-sm me-2">
                     <i class="bi bi-box-seam me-1"></i> Ir a Productos
                 </a>
-                <a href="{{ route('categorias.create') }}" class="btn btn-primary shadow-sm">
+                <a href="{{ route('web.categorias.create') }}" class="btn btn-primary shadow-sm">
                     <i class="bi bi-plus-lg me-1"></i> Nueva Categoría
                 </a>
             </div>
@@ -55,12 +55,12 @@
                                     <td class="fw-bold text-dark">{{ $categoria->nombre }}</td>
                                     <td class="text-end pe-4">
                                         <!-- Botón Editar -->
-                                        <a href="{{ route('categorias.edit', $categoria->id) }}" class="btn btn-outline-warning btn-sm me-1" title="Editar">
+                                        <a href="{{ route('web.categorias.edit', $categoria->id) }}" class="btn btn-outline-warning btn-sm me-1" title="Editar">
                                             <i class="bi bi-pencil-square"></i> Editar
                                         </a>
 
                                         <!-- Botón Eliminar -->
-                                        <form action="{{ route('categorias.destroy', $categoria->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de eliminar esta categoría? Se borrarán en cascada los productos asociados a ella.');">
+                                        <form action="{{ route('web.categorias.destroy', $categoria->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de eliminar esta categoría? Se borrarán en cascada los productos asociados a ella.');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-outline-danger btn-sm" title="Eliminar">

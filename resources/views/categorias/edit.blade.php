@@ -14,7 +14,7 @@
             <div class="col-md-6">
                 
                 <!-- Botón de Regresar -->
-                <a href="{{ route('categorias.index') }}" class="btn btn-outline-secondary btn-sm mb-3">
+                <a href="{{ route('web.categorias.index') }}" class="btn btn-outline-secondary btn-sm mb-3">
                     <i class="bi bi-arrow-left"></i> Volver al listado
                 </a>
 
@@ -34,7 +34,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('categorias.update', $categoria->id) }}" method="POST">
+                    <form action="{{ route('web.categorias.update', $categoria->id) }}" method="POST">
                         @csrf
                         @method('PUT')
 

@@ -27,7 +27,7 @@ class CategoriaController extends Controller
     {
         Categoria::create($request->validated());
 
-        return redirect()->route('categorias.index')
+        return redirect()->route('web.categorias.index')
                          ->with('success', 'Categoría creada con éxito.');
     }
 
@@ -42,7 +42,7 @@ class CategoriaController extends Controller
     {
         $categoria->update($request->validated());
 
-        return redirect()->route('categorias.index')
+        return redirect()->route('web.categorias.index')
                          ->with('success', 'Categoría actualizada correctamente.');
     }
 
@@ -52,7 +52,7 @@ class CategoriaController extends Controller
         // Si borras la categoría, sus productos también se eliminarán.
         $categoria->delete();
 
-        return redirect()->route('categorias.index')
+        return redirect()->route('web.categorias.index')
                          ->with('success', 'Categoría eliminada.');
     }
 }
