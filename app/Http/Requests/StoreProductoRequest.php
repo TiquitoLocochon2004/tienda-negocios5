@@ -43,6 +43,7 @@ class StoreProductoRequest extends FormRequest
             'nombre.unique'       => 'Ya existe un producto registrado con este nombre.',
             'precio.required'     => 'El precio es obligatorio.',
             'precio.numeric'      => 'El precio debe ser un número válido.',
+            'precio.min'          => 'El precio no puede ser negativo. El valor mínimo permitido es 0.',
             'stock.required'      => 'El stock es obligatorio.',
             'stock.integer'       => 'El stock debe ser un número entero.',
             'categoria_id.required' => 'Debes seleccionar una categoría.',
