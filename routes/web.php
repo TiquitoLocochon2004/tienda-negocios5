@@ -20,7 +20,7 @@ use App\Http\Controllers\CarritoItemController;
 
 Route::view('/', 'welcome');
 
-// Rutas Web de Productos (adaptadas a tus vistas)
+// --- PRODUCTOS (Orden estricto: estáticas primero, dinámicas después) ---
 Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
 Route::get('/productos/crear', [ProductoController::class, 'create'])->name('productos.create');
 Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
@@ -28,7 +28,7 @@ Route::get('/productos/{producto}/editar', [ProductoController::class, 'edit'])-
 Route::put('/productos/{producto}', [ProductoController::class, 'update'])->name('productos.update');
 Route::delete('/productos/{producto}', [ProductoController::class, 'destroy'])->name('productos.destroy');
 
-// Rutas Web de Categorías (adaptadas a tus vistas)
+// --- CATEGORÍAS (Orden estricto: estáticas primero, dinámicas después) ---
 Route::get('/categorias', [CategoriaController::class, 'index'])->name('categorias.index');
 Route::get('/categorias/crear', [CategoriaController::class, 'create'])->name('categorias.create');
 Route::post('/categorias', [CategoriaController::class, 'store'])->name('categorias.store');
