@@ -12,7 +12,8 @@ class CategoriaController extends Controller
     public function index()
     {
         $categorias = Categoria::all();
-        return view('categorias.index', compact('categorias'));
+        //return view('categorias.index', compact('categorias'));
+        return response(view('categorias.index', compact('categorias'))->render())->header('Content-Type', 'text/html');
     }
 
     // Mostrar formulario de creación

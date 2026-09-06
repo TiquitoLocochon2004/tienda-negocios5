@@ -12,7 +12,8 @@ class ProductoController extends Controller
     public function index()
     {
         $productos = Producto::with('categoria')->get();
-        return view('productos.index', compact('productos'));
+        //return view('productos.index', compact('productos'));
+        return response(view('productos.index', compact('productos'))->render())->header('Content-Type', 'text/html');
     }
 
     public function create()
