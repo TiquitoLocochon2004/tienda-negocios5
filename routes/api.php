@@ -20,8 +20,10 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 // Endpoints Públicos de Catálogo (Categorías y Productos)
-Route::apiResource('categorias', CategoriaController::class);
-Route::apiResource('productos', ProductoController::class);
+Route::name('api.')->group(function () {
+    Route::apiResource('categorias', CategoriaController::class);
+    Route::apiResource('productos', ProductoController::class);
+});
 
 // --- RUTAS PROTEGIDAS (Requieren Token JWT) ---
 Route::middleware('auth:api')->group(function () {
