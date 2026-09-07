@@ -44,7 +44,7 @@ class StoreProductoRequest extends FormRequest
             'precio.required'     => 'El precio es obligatorio.',
             'precio.numeric'      => 'El precio debe ser un número válido.',
             'precio.min'          => 'El precio no puede ser negativo. El valor mínimo permitido es 0.',
-            'precio.max'          => 'El precio no puede superar los 999,999.99.',
+            'precio.max'          => 'El precio no puede superar los 999,999,999.99.',
             'stock.required'      => 'El stock es obligatorio.',
             'stock.integer'       => 'El stock debe ser un número entero.',
             'stock.min'           => 'El stock no puede ser negativo. El valor mínimo permitido es 0.',
