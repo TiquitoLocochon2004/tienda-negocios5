@@ -145,9 +145,9 @@ Implementadas en tests/Feature/SecurityAndAccessibilityTest.php, verificando la 
 ---
 
 ### 🌐 8. Despliegue en Producción
-La aplicación se encuentra lista y desplegada para su acceso en línea:
+La aplicación se encuentra lista y desplegada para su acceso en línea. ¡Juega con ella!:
 
-* `URL de Producción:` [Pendiente de despliegue oficial / URL pública de producción]
+* `URL de Producción:` [https://tienda-negocios5-production.up.railway.app/productos]
 
 ---
 
